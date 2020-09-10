@@ -1,2 +1,2 @@
 language = "cpp"
-run="mkdir -p ../build; cd ../build; cmake ../acc-cosc-1337-fall-2020-julieei206-1/; make; cd test/classwork_test/01_assign_test; ./cw_01_tests;
+run="mkdir -p ../build; cd ../build; cmake ../acc-cosc-1337-fall-2020-julieei206-1/; make; cd test/classwork_test/01_assign_test; ./cw_01_tests;"

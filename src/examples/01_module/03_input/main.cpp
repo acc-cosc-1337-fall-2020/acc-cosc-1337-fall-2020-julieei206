@@ -2,6 +2,7 @@
 
 
 //write namespace using statements
+#include<iostream>
 
 /*
 Capture units and rate values from keyboard.
@@ -12,8 +13,16 @@ Display the total:
 Total: 100
 
 */
+
+using namespace std;
+
 int main() 
 {
+  int num;
+  cout<<'Enter a number: ';
+  cin>>num;
+
+  cout<<'You entered: '<<num;
 	
 	
 	return 0;
