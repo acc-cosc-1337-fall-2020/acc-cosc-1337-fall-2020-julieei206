@@ -1,13 +1,7 @@
 #include "vars.h"
 #include<iostream>
 
-  using std::cout;
-int main()
-{
-  //echo_variable(5);
-  //cout<<"\n"<<echo_variable_ret(5)<<"\n"
-
-}
+using std::cout;
 
 
 /*
