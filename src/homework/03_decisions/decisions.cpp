@@ -45,4 +45,3 @@ double calculate_gpa(int credit_hours, double credit_points)
 {
 	return credit_points / credit_hours;
 }
-
