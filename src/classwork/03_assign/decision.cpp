@@ -35,8 +35,16 @@ char get_letter_grade_using_switch(int grade)
         case 6:
             result='D';
             break;
+        case 5:
+        case 4:
+        case 3:
+        case 2:
+        case 1: 
+        case 0:
+            result = 'F';
+            break;
         default:
-            result='F';
+            result='I';//invalid string required
     }
     return result;
 }
