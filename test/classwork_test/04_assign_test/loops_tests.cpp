@@ -8,17 +8,17 @@ TEST_CASE("Verify Test Configuration", "verification") {
 
 TEST_CASE("Test num(3) function") 
 {
-	REQUIRE(num(3) == 6);
+	REQUIRE(factorial(3) == 6);
 }
 
 TEST_CASE("Test num(4) function") 
 {
-	REQUIRE(num(4) == 24);
+	REQUIRE(factorial(4) == 24);
 }
 
 TEST_CASE("Test num(5) function") 
 {
-	REQUIRE(num(5) == 120);
+	REQUIRE(factorial(5) == 120);
 }
 
 
