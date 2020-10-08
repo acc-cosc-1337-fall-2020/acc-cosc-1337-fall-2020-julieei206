@@ -4,9 +4,6 @@
 
  using std::cout; using std::cin; using std::endl; 
 
-//Write include for capturing input from keyboard and displaying output to screen
-
-
 int main() 
 {
   int num;
