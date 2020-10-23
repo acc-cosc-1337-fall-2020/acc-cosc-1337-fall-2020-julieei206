@@ -8,7 +8,7 @@ TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
-TEST_CASE("")
+TEST_CASE("Test game over if 9 slots are selected")
 {
 	int mark;
 	TicTacToe test;

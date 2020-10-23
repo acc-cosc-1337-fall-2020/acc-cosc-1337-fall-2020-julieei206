@@ -2,8 +2,6 @@
 #include "catch.hpp"
 #include "types.h"
 
-using namespace std;
-
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
@@ -12,10 +10,3 @@ TEST_CASE("Test sum_numbers function")
 {
 	REQUIRE(sum_numbers(5, 5) == 10);
 }
-
-TEST_CASE("Test multiply_numbers(10) function") 
-{
-	REQUIRE(multiply_numbers(10) == 50);
-}
-
-
