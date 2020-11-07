@@ -191,3 +191,38 @@ TEST_CASE("Test win diagonally from bottom left")
 	REQUIRE(game.game_over() == true);
 	REQUIRE(game.get_winner() == "X");
 }
+
+TEST_CASE("Test get winner function with X")
+{
+	TicTacToe game;
+	TicTacToeManager manager;
+	game.start_game("x");
+	game.mark_board(1);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(2);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(4);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(5);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(7);
+	REQUIRE(game.game_over() == true);
+	REQUIRE(game.get_winner() == "X");
+}
+
+TEST_CASE("Test get winner function with O")
+{
+	TicTacToe game;
+	game.start_game("o");
+	game.mark_board(1);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(2);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(4);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(5);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(7);
+	REQUIRE(game.game_over() == true);
+	REQUIRE(game.get_winner() == "O");
+}

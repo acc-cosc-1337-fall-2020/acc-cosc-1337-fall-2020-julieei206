@@ -15,7 +15,10 @@ public:
     void mark_board(int mark);
     std::string get_player()const{return player;};
     void display_board()const;
-    string get_winner(){return winner;}
+    string get_winner()const{return winner;};
+    
+    friend std::istream& operator >> (std::istream&, TicTacToe& game);
+    friend std::ostream& operator << (std::ostream&, const TicTacToe& game);
 
 private:
     bool check_board_full()const;
