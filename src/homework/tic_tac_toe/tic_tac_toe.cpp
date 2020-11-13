@@ -59,13 +59,14 @@ void TicTacToe::mark_board(int mark)
     }
 }
 
-void TicTacToe::display_board()const
+/*void TicTacToe::display_board()const
 {
     for(std::size_t i=0; i < pegs.size(); i += 3)
     {
         std::cout<<pegs[i]<<"|"<<pegs[i+1]<<"|"<<pegs[i+2]<<"\n";
     }
 }
+*/
 
 void TicTacToe::set_next_player()
 {
