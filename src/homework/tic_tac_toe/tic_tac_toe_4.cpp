@@ -1,35 +1,54 @@
 #include "tic_tac_toe_4.h"
 
-bool TicTacToe4::check_column_win()
+bool TicTacToe4::check_column_win() const
 {
-    if (((pegs[0] == pegs[4] && pegs[4] == pegs[8] && pegs[8] == pegs[12]) && pegs[0] != " ") ||
-        ((pegs[1] == pegs[5] && pegs[5] == pegs[9] && pegs[9] == pegs[13]) && pegs[1] != " ") ||
-        ((pegs[2] == pegs[6] && pegs[6] == pegs[10] && pegs[10] == pegs[14]) && pegs[2] != " ") ||
-        ((pegs[3] == pegs[7] && pegs[7] == pegs[11] && pegs[11] == pegs[15]) && pegs[3] != " "))
-        return true;
-    
-    else {return false;}
+    for(std::size_t i=0; i < 4; ++i)
+    {
+        if(pegs[i] == "x" && pegs[i+4] == "x" && pegs[i+8] == "x" && pegs[i+12] == "x")
+        {
+            return true;
+        }
+        else if(pegs[i] == "o" && pegs[i+4] == "o" && pegs[i+8] == "o" && pegs[i+12] == "o")
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
-
-bool TicTacToe4::check_row_win()
+bool TicTacToe4::check_row_win() const
 {
-    if (((pegs[0] == pegs[1] && pegs[1] == pegs[2] && pegs[2] == pegs[3]) && pegs[0] != " ") ||
-        ((pegs[4] == pegs[5] && pegs[5] == pegs[6] && pegs[6] == pegs[7]) && pegs[4] != " ") ||
-        ((pegs[8] == pegs[9] && pegs[9] == pegs[10] && pegs[10] == pegs[11]) && pegs[8] != " ") ||
-        ((pegs[12] == pegs[13] && pegs[13] == pegs[14] && pegs[14] == pegs[15]) && pegs[12] != " "))
-        return true;
-    
-    else {return false;}
+    for(std::size_t i=0; i < pegs.size(); i += 4)
+    {
+        if(pegs[i] == "x" && pegs[i+1] == "x" && pegs[i+2] == "x" && pegs[i+3] == "x")
+        {
+            return true;
+        }
+        else if(pegs[i] == "o" && pegs[i+1] == "o" && pegs[i+2] == "o" && pegs[i+3] == "o")
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
-
-
-bool TicTacToe4::check_diagnol_win()
+bool TicTacToe4::check_diagonal_win() const
 {
-    if (((pegs[0] == pegs[5] && pegs[5] == pegs[10] && pegs[10] == pegs[15]) && pegs[0] != " ") ||
-        ((pegs[12] == pegs[9] && pegs[9] == pegs[6] && pegs[6] == pegs[3]) && pegs[12] != " "))
+    if(pegs[0] == "x" && pegs[5] == "x" && pegs[10] == "x" && pegs[15] == "x")
+    {
         return true;
-    
-    else {return false;}
+    } 
+    else if(pegs[3] == "x" && pegs[6] == "x" && pegs[9] == "x" && pegs[12] == "x")
+    {
+        return true;
+    }
+    else if(pegs[0] == "o" && pegs[5] == "o" && pegs[10] == "o" && pegs[15] == "o")
+    {
+        return true;
+    }
+    else if(pegs[3] == "o" && pegs[6] == "o" && pegs[9] == "o" && pegs[12] == "o")
+    {
+        return true;
+    }
+    return false;
 }

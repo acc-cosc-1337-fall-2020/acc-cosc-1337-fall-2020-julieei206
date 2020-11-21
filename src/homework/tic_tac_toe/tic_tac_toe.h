@@ -1,7 +1,6 @@
 #include<iostream>
 #include<vector>
 #include<string>
-#include<memory>
 
 using std::vector; using std::string;
 
@@ -11,30 +10,33 @@ using std::vector; using std::string;
 class TicTacToe
 {
 public:
-    TicTacToe(int sum) : pegs(sum*sum," "){}
-    bool game_over();
-    void start_game(std::string first_player);
-    void mark_board(int position);
-    std::string get_player()const{return player;};
-    void display_board()const;
-    string get_winner()const{return winner;};
+    TicTacToe(){};
+    TicTacToe(unsigned int size) : pegs(size*size," "){}
+    TicTacToe(vector<string> p, string win) : pegs(p), winner(win){}
 
-    friend std::istream& operator >> (std::istream&, TicTacToe& game);
+    bool game_over();
+    void mark_board(int position);
+    void start_game(std::string first_player);
+    string get_player()const{return player;};
+    string get_winner()const{return winner;};
+    vector<string> get_pegs()const{return pegs;}
+
     friend std::ostream& operator << (std::ostream&, const TicTacToe& game);
+    friend std::istream& operator >> (std::istream&, TicTacToe& game);
 
 protected:
-vector <string> pegs;
-virtual bool check_column_win();
-virtual bool check_row_win();
-virtual bool check_diagonal_win
+vector <string> pegs{};
+virtual bool check_column_win() const = 0;
+virtual bool check_row_win() const = 0;
+virtual bool check_diagonal_win const = 0;
 
 private:
-    bool check_board_full()const;
+    string player;
+    string winner;
+    
     void set_next_player();
-    std::string player;
-    std::vector<std::string> pegs{9, " "};
-    std::string winner;
+    bool check_board_full()const;
     void clear_board();
     void set_winner();
 };
-#endif
+#endif 
